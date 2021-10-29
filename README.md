@@ -1,3 +1,50 @@
+# Next.js App
+
+## How to install the app
+
+```
+npm install
+```
+
+## How to start the app
+
+```
+npm run dev
+```
+
+Check that the app is up and running using the home page: http://localhost:3000
+
+### Newly created pages
+
+The members api (http://localhost:3000/api/members) will read the values from the Cassandra database:
+
+```json
+[
+  {
+    "id": "136b5f58-957b-4403-94d4-32a254819b6c",
+    "github": "github-1",
+    "location": "location-1",
+    "name": "name-1"
+  },
+  {
+    "id": "28b665ee-15ac-45e5-85fb-7081530d9f09",
+    "github": "github-2",
+    "location": "location-2",
+    "name": "name-2"
+  }
+]
+```
+
+The members page: (http://localhost:3000/members) will use the previously implemented api.
+
+## Links
+
+[Blog: Fullstack app using NextJS (React) and DataStax's AstraDB with the help of GitHub Copilot](https://www.eddiejaoude.io/blog-august-2021-nextjs-datastax?r_done=1)
+
+[YouTube: Fullstack app using NextJS (React) and DataStax's AstraDB with the help of GitHub Copilot](https://www.youtube.com/watch?v=FhcCgg4pIg4)
+
+[Node.js Collection Client](https://docs.datastax.com/en/astra/docs/astra-collection-client.html)
+
 # TypeScript Next.js example
 
 This is a really simple project that shows the usage of Next.js with TypeScript.
