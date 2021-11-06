@@ -37,6 +37,28 @@ The members api (http://localhost:3000/api/members) will read the values from th
 
 The members page: (http://localhost:3000/members) will use the previously implemented api.
 
+## How to test it
+
+Use the official Next.js documentation: https://nextjs.org/docs/testing#jest-and-react-testing-library
+
+```
+npm install --save-dev jest babel-jest @testing-library/react @testing-library/jest-dom identity-obj-proxy react-test-renderer
+
+touch jest.config.js
+mkdir __mocks__
+touch __mocks__/fileMock.js
+touch __mocks__/styleMock.js
+touch jest.setup.js
+mkdir __tests__
+touch __tests__/index.test.jsx
+```
+
+### Run the test
+
+```
+npm test
+```
+
 ## Links
 
 [Blog: Fullstack app using NextJS (React) and DataStax's AstraDB with the help of GitHub Copilot](https://www.eddiejaoude.io/blog-august-2021-nextjs-datastax?r_done=1)

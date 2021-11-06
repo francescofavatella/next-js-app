@@ -16,7 +16,7 @@ const handler = async (_req: NextApiRequest, res: NextApiResponse) => {
     const members = await membersCollection.find({});
 
     if (!members) {
-      throw new Error('Cannot find product data')
+      throw new Error('Cannot find members data')
     }
 
     res.status(200).json(Object.keys(members).map(key => ({ id: key, ...members[key] }))
