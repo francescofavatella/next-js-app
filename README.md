@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/francescofavatella/next-js-app/actions/workflows/node.js.yml/badge.svg?branch=master)](https://github.com/francescofavatella/next-js-app/actions/workflows/node.js.yml)
+
 # Next.js App
 
 ## How to install the app
