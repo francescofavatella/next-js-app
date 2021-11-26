@@ -5,7 +5,8 @@
     "build": "next build",
     "start": "next start",
     "type-check": "tsc",
-    "test": "jest --watch"
+    "test": "jest --watch",
+    "test:ci": "jest"
   },
   "dependencies": {
     "@astrajs/collections": "^0.1.2",
