@@ -2,15 +2,11 @@
  * @jest-environment jsdom
  */
 
- import React from 'react'
- import { render, screen } from '@testing-library/react'
- import Members from '../pages/members'
- 
- describe('Members', () => {
-   it('renders a heading', () => {
+import React from 'react'
+import { render, screen, act, within } from '@testing-library/react'
+import Members from '../pages/members'
 
-
- const fakeMembers = [
+const fakeMembers = [
   {
     "id": "136b5f58-957b-4403-94d4-32a254819b6c",
     "github": "github-1",
@@ -25,26 +21,33 @@
   }
 ];
 
-global.fetch = jest.fn().mockImplementation(() =>
-Promise.resolve({
-  json: () => Promise.resolve(fakeMembers)
-}))
+describe('Members', () => {
+  it('fetch data', async () => {
 
-     render(<Members />)
- 
-     const heading = screen.getByText(/Hi There, here are the members/i)
-    //  const heading = screen.getByRole('paragraph', {
-    //   name: /Hi There, here are the members/i,
-    // })
-     
- 
-     expect(heading).toBeInTheDocument()
+    // Setup
+    global.fetch = jest.fn(() =>
+      Promise.resolve({
+        json: () => Promise.resolve(fakeMembers)
+      }))
+
+    await act(async () => render(<Members />))
+
+    const list = screen.getByRole("list", {
+      name: /Hi There, here are the members/i,
+    })
+
+    expect(fetch).toBeCalledWith('http://localhost:3000/api/members')
+
+    const { getAllByRole } = within(list)
+    const items = getAllByRole("listitem")
+    expect(items.length).toBe(2)
 
 
-    //  global.fetch.mockRestore();
+    expect(items[0]).toHaveTextContent(/name-1/i)
+    expect(items[1]).toHaveTextContent(/name-2/i)
 
+    // Cleanup
     global.fetch.mockClear()
-delete global.fetch
-
-   })
- })
+    delete global.fetch
+  })
+})

@@ -59,6 +59,18 @@ touch __tests__/index.test.jsx
 npm test
 ```
 
+### How to mock fetch
+
+https://gist.github.com/francescofavatella/9e659e4c82607c86042c5b84dc4ce4b0
+
+### Test async rendering
+
+https://gist.github.com/francescofavatella/93a4f1e8f4dea4c675bfde0f8a513102
+
+### Test list rendering
+
+https://gist.github.com/francescofavatella/232aea16e00bf3c204b413807f2cfe19
+
 ## Links
 
 [Blog: Fullstack app using NextJS (React) and DataStax's AstraDB with the help of GitHub Copilot](https://www.eddiejaoude.io/blog-august-2021-nextjs-datastax?r_done=1)

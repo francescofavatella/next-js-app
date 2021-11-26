@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import Layout from '../components/Layout'
 import { Members } from '../interfaces'
@@ -16,10 +15,8 @@ export default function MembersPage() {
 
   return (
     <Layout title="Members | Next.js + TypeScript Example">
-      <p>
-        Hi There, here are the members:
-      </p>
-      <ul>
+      <h1 id="members-heading">Hi There, here are the members:</h1>
+      <ul aria-labelledby="members-heading">
         {members.map(member => <li key={member.id}>{member.name}</li>)}
       </ul>
     </Layout>
